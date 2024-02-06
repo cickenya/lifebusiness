@@ -5,7 +5,7 @@ user_units = int(st.number_input("Enter Number of Unit Managers"))
 user_agents = int(st.number_input("Number of Agents Per Unit"))
 user_policies = int(st.number_input("Enter the Number of Policies Per Month:"))
 user_amount = int(st.number_input("Enter the Premium Per Policy"))
-user_policy_term = int(st.number_input("Enter the Policy Term (For now 1 to 10 years"))
+user_policy_term = int(st.number_input("Enter the Policy Term (For now 1 to 10 years)"))
 user_persistency = float(st.number_input("Enter Pesistency as a Percentage eg. 80"))
 
 policies = user_policies
