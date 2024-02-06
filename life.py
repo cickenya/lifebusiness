@@ -150,6 +150,8 @@ if st.button("Calculate"):
 
     finalmerged = merged[['year', 'premium', 'commission']]
 
+    finalmerged = finalmerged.rename({'premium':'Premium Received', 'commission':'Commission Payable'})
+
     st.table(finalmerged)
         
 
