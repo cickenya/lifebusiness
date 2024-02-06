@@ -49,7 +49,7 @@ if st.button("Calculate"):
     results1 = calculate_premium(years)
 
     table1 = pd.DataFrame(results1)
-    st.table(table1)
+    # st.table(table1)
     
            
     
@@ -144,7 +144,7 @@ if st.button("Calculate"):
     table = pd.DataFrame(results)   
     
         
-    st.table(table)
+    # st.table(table)
     
     merged = pd.merge(table1, table, on='year', how='inner')
 
