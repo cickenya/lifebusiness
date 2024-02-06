@@ -5,15 +5,15 @@ user_units = int(st.number_input("Enter Number of Unit Managers"))
 user_agents = int(st.number_input("Number of Agents Per Unit"))
 user_policies = int(st.number_input("Enter the Number of Policies Per Month:"))
 user_amount = int(st.number_input("Enter the Premium Per Policy"))
-user_policy_term = int(st.number_input("Enter the Policy Term"))
-user_persistency = float(st.number_input("Enter percentage"))
+user_policy_term = int(st.number_input("Enter the Policy Term (For now 1 to 10 years"))
+user_persistency = float(st.number_input("Enter Pesistency as a Percentage eg. 80"))
 
 policies = user_policies
 years = user_policy_term
 amount = user_amount
 agents = user_agents
 unit_managers = user_units
-persistency = user_persistency
+persistency = (user_persistency/100)
 
 commission_rate_year_one = 0.4
 commission_rate_year_two = 0.2
