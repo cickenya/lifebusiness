@@ -1,6 +1,8 @@
 import streamlit as st
 import pandas as pd
 
+st.header('LIFE BUSINESS FINANCIAL IMPLICATIONS')
+
 user_units = int(st.number_input("Enter Number of Unit Managers"))
 user_agents = int(st.number_input("Number of Agents Per Unit"))
 user_policies = int(st.number_input("Enter the Number of Policies Per Month:"))
