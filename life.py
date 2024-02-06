@@ -148,7 +148,7 @@ if st.button("Calculate"):
     
     merged = pd.merge(table1, table, on='year', how='inner')
 
-   finalmerged = merged[['year', 'premium', 'commission']].rename(columns={'year':'As at End of Year:', 'premium': 'Premium Received', 'commission': 'Commission Payable'})
+    finalmerged = merged[['year', 'premium', 'commission']].rename(columns={'year':'As at End of Year:', 'premium': 'Premium Received', 'commission': 'Commission Payable'})
     st.table(finalmerged)
 
         
