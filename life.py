@@ -23,7 +23,7 @@ commission_rate_year_three_onwards = 0.05
 
 premium_month_one = (policies*amount*agents*unit_managers*persistency)
 comm_premium = 6*(premium_month_one + (premium_month_one + ((12-1) * premium_month_one))
-st.write(comm_premium)
+st.markdown(comm_premium)
 
 if st.button("Calculate"):
     def calculate_premium(years):   
