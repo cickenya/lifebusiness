@@ -22,13 +22,11 @@ commission_rate_year_two = 0.2
 commission_rate_year_three_onwards = 0.05
 
 premium_month_one = (policies*amount*agents*unit_managers*persistency)
-comm_premium = 6*(premium_month_one + (premium_month_one + ((12-1) * premium_month_one))
+#comm_premium = 6*(premium_month_one + (premium_month_one + ((12-1) * premium_month_one))
 
 
 if st.button("Calculate"):
-    def calculate_premium(years):    
-        
-        
+    def calculate_premium(years):   
         results1 = []
         from_previous_year = 0  # Initialize from_previous_year
         
@@ -58,13 +56,8 @@ if st.button("Calculate"):
     
            
     
-    def calculate_commission(years):
-        
-        
-        
+    def calculate_commission(years):             
         results = []
-        
-        
         for year in range(1, years+1):
 
             comm_premium = 6*(premium_month_one + (premium_month_one + ((12-1) * premium_month_one)))
@@ -156,7 +149,7 @@ if st.button("Calculate"):
 
     finalmerged = merged[['year', 'premium', 'commission', 'Cumulative Premium']].rename(columns={'year':'As at End of Year:', 'premium': 'Premium Received', 'commission': 'Commission Payable'})
     st.table(finalmerged)
-    st.write(comm_premium)
+st.write(comm_premium)
         
 
 
