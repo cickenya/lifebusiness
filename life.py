@@ -21,6 +21,8 @@ commission_rate_year_one = 0.4
 commission_rate_year_two = 0.2
 commission_rate_year_three_onwards = 0.05
 
+premium_month_one = (policies*amount*agents*unit_managers*persistency)
+
 
 if st.button("Calculate"):
     def calculate_premium(years):    
@@ -32,8 +34,8 @@ if st.button("Calculate"):
         for year in range(1, years+1):
             # Calculate Premium
             if year == 1:
-                premium = 12 * (policies * amount  * agents * unit_managers * persistency)
-                from_previous_year = 1228800
+                premium = 6*(premium_month_one + (premium_month_one + ((12-1) * premium_month_one)))
+                from_previous_year = 0
             else:
                 
                 from_previous_year = premium * persistency
@@ -64,7 +66,7 @@ if st.button("Calculate"):
         
         for year in range(1, years+1):
 
-            comm_premium = 12 * (policies * amount  * agents * unit_managers * persistency)
+            comm_premium = 6*(premium_month_one + (premium_month_one + ((12-1) * premium_month_one)))
           
             if year == 1:
                 commission = (comm_premium * commission_rate_year_one)
