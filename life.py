@@ -150,7 +150,7 @@ if st.button("Calculate"):
     merged['Cumulative Commission'] = merged['commission'].cumsum()
     
 
-    finalmerged = merged[['year', 'premium', 'commission', 'Cumulative Premium', Cumulative Commission]].rename(columns={'year':'As at End of Year:', 'premium': 'Premium Received', 'commission': 'Commission Payable'})
+    finalmerged = merged[['year', 'premium', 'commission', 'Cumulative Premium', 'Cumulative Commission']].rename(columns={'year':'As at End of Year:', 'premium': 'Premium Received', 'commission': 'Commission Payable'})
     st.table(finalmerged)
     
         
