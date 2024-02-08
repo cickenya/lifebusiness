@@ -29,7 +29,8 @@ comm_premium = 6*(premium_month_one + (premium_month_one + ((12-1) * premium_mon
 
 if st.button("Calculate"):
 
-    st.markdown("Annual Premium For New Business:" ,comm_premium)
+    st.markdown(f"Annual Premium For New Business: {comm_premium}")
+    
     def calculate_premium(years):   
         results1 = []
         from_previous_year = 0  # Initialize from_previous_year
