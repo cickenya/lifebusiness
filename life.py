@@ -151,8 +151,9 @@ if st.button("Calculate"):
     # st.table(table)
     
     merged = pd.merge(table1, table, on='year', how='inner')
+    merged['Cumulative Premium'] = merged['premium'].cumsum()
 
-    finalmerged = merged[['year', 'premium', 'commission']].rename(columns={'year':'As at End of Year:', 'premium': 'Premium Received', 'commission': 'Commission Payable'})
+    finalmerged = merged[['year', 'premium', 'commission', 'Cumulative Premium']].rename(columns={'year':'As at End of Year:', 'premium': 'Premium Received', 'commission': 'Commission Payable'})
     st.table(finalmerged)
 
         
