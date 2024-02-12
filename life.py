@@ -9,7 +9,7 @@ finaldf = {}
 
 st.header('LIFE BUSINESS FINANCIAL IMPLICATIONS')
 
-tab1, tab2, tab3 = st.tabs(["📈 Calculations",  "Premium and Commission", "Investment"])
+tab1, tab2, tab3 = st.tabs(["📈 Calculations",  "Premium and Commission Summary", "Investment Summary"])
 
 with tab1:
     
