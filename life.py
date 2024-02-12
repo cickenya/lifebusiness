@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-import numpy as np
+
 
 investment = {}
 timeframe = 0
@@ -9,7 +9,7 @@ finaldf = {}
 
 st.header('LIFE BUSINESS FINANCIAL IMPLICATIONS')
 
-tab1, tab2, tab3 = st.tabs(["📈 Calculations",  "Premium and Commission Summary", "Investment Summary"])
+tab1, tab2, tab3 = st.tabs(["📈 Calculations",  "Premium and Commission", "Investment"])
 
 with tab1:
     
@@ -166,9 +166,12 @@ with tab1:
         
 
         finalmerged = merged[['year', 'premium', 'commission', 'Cumulative Premium', 'Cumulative Commission']].rename(columns={'year':'As at End of Year:', 'premium': 'Premium Received', 'commission': 'Commission Payable'})
-        finalmerged['Principal'] = finalmerged['Premium Received'] - finalmerged['Commission Payable']
-
         
+        finalmerged['Salaries, ICT and Overhead Expenses'] = ((0.1 * finalmerged['Premium Received']) + 2000000)
+
+        finalmerged['Investment Principal'] = finalmerged['Premium Received'] - (finalmerged['Commission Payable'] + finalmerged['Salaries, ICT and Overhead Expenses'])
+
+        finalmerged = finalmerged[['Premium Received', 'Commission Payable','Salaries, ICT and Overhead Expenses', 'Investment Principal','Cumulative Premium', 'Cumulative Commission' ]]
         
         investment_data = finalmerged.to_dict(orient='records')
         investment = investment_data.copy()
@@ -176,32 +179,37 @@ with tab1:
 
         df2 = pd.DataFrame(investment)
 
-    
+            
 
         df2['Interest Factor'] = (1 + (0.15/1))**(timeframe - df2.index.values)
 
-        df2['Investment Amount After Maturity Period'] = df2['Principal'] * df2['Interest Factor']
+        
+        df2['Investment Amount After Maturity Period'] = df2['Investment Principal'] * df2['Interest Factor']
 
-        df2['Interest Earned'] = df2['Investment Amount After Maturity Period'] - df2['Principal']
+        df2['Interest Earned'] = df2['Investment Amount After Maturity Period'] - df2['Investment Principal']
             
         df2['Cumulative Amount In Investment Account'] = df2['Investment Amount After Maturity Period'].cumsum()
 
-        newdf = df2[['Principal', 'Interest Earned', 'Investment Amount After Maturity Period', 'Cumulative Amount In Investment Account']]
+        newdf = df2[['Investment Principal', 'Interest Earned', 'Investment Amount After Maturity Period', 'Cumulative Amount In Investment Account']]
         
+        newdf = newdf.round(0)
+
         final = newdf.to_dict(orient='records')
         finaldf = final.copy()
+
+        
 
 
 with tab2:   
 
-    st.table(investment)
+    st.dataframe(investment)
 
 
     
 with tab3:
     df3 = pd.DataFrame(finaldf)
-    st.table(df3)
 
+    df3 = df3.round(0)
     
-
-
+    # Display the styled DataFrame
+    st.dataframe(df3)
