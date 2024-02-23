@@ -222,5 +222,6 @@ with tab3:
 
 with tab4:
     st.write('If the logic of the model is upheld we expect to start paying claims in the 11th year after inception')
+    st.write('A 5% bonus is also included on the total premium received')
     st.write('Claim Payable :')
     st.markdown(f'Ksh. {annual}')
