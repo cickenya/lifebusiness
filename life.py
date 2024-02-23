@@ -34,7 +34,7 @@ with tab1:
 
     premium_month_one = (policies*amount*agents*unit_managers*persistency)
     comm_premium = 6*(premium_month_one + (premium_month_one + ((12-1) * premium_month_one)))
-    annual = '{:,.0f}'.format(round(10 * (comm_premium + annual)))
+    annual = '{:,.0f}'.format(round((10 * (comm_premium + annual)) + (0.05 * 10 * (comm_premium + annual))))
 
     amended_premium = "{:,.0f}".format(comm_premium)
   
