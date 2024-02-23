@@ -184,11 +184,11 @@ with tab1:
         df2['Interest Factor'] = (1 + (0.15/1))**(timeframe - df2.index.values)
 
         
-        df2['Investment Amount After Maturity Period'] = df2['Investment Principal'] * df2['Interest Factor']
+        df2['Investment Amount After Maturity Period'] = round(df2['Investment Principal'] * df2['Interest Factor'])
 
-        df2['Interest Earned'] = df2['Investment Amount After Maturity Period'] - df2['Investment Principal']
+        df2['Interest Earned'] = round(df2['Investment Amount After Maturity Period'] - df2['Investment Principal'])
             
-        df2['Cumulative Amount In Investment Account'] = df2['Investment Amount After Maturity Period'].cumsum()
+        df2['Cumulative Amount In Investment Account'] = round(df2['Investment Amount After Maturity Period'].cumsum())
 
         newdf = df2[['Investment Principal', 'Interest Earned', 'Investment Amount After Maturity Period', 'Cumulative Amount In Investment Account']]
         
