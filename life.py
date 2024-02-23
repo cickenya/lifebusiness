@@ -221,4 +221,4 @@ with tab3:
 
 with tab4:
     st.write('If the logic of the model is upheld we expect to start paying claims in the 11th year after inception')
-    st.write('Claim Payable :' annual)
+    st.write('Claim Payable :' {annual})
