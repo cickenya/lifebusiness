@@ -49,12 +49,12 @@ with tab1:
             for year in range(1, years+1):
                 # Calculate Premium
                 if year == 1:
-                    premium = 6*(premium_month_one + (premium_month_one + ((12-1) * premium_month_one)))
+                    premium = round(6*(premium_month_one + (premium_month_one + ((12-1) * premium_month_one))))
                     from_previous_year = 0
                 else:
                     
                     from_previous_year = premium * persistency
-                    premium = from_previous_year + results1[-1]['current_year']
+                    premium = round(from_previous_year + results1[-1]['current_year'])
                 
                 
                 results1.append({
