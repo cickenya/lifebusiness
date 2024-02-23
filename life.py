@@ -4,6 +4,7 @@ import pandas as pd
 
 investment = {}
 timeframe = 0
+annual = 0
 
 finaldf = {}
 
@@ -35,7 +36,7 @@ with tab1:
     comm_premium = 6*(premium_month_one + (premium_month_one + ((12-1) * premium_month_one)))
 
     amended_premium = "{:,.0f}".format(comm_premium)
-
+  
 
 
     if st.button("Calculate"):
@@ -51,10 +52,13 @@ with tab1:
                 if year == 1:
                     premium = round(6*(premium_month_one + (premium_month_one + ((12-1) * premium_month_one))))
                     from_previous_year = 0
+                    annual = premium + annual
                 else:
                     
                     from_previous_year = premium * persistency
                     premium = round(from_previous_year + results1[-1]['current_year'])
+
+                  
                 
                 
                 results1.append({
@@ -217,3 +221,4 @@ with tab3:
 
 with tab4:
     st.write('If the logic of the model is upheld we expect to start paying claims in the 11th year after inception')
+    st.write('Claim Payable' : amended)
