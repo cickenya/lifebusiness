@@ -34,7 +34,7 @@ with tab1:
 
     premium_month_one = (policies*amount*agents*unit_managers*persistency)
     comm_premium = 6*(premium_month_one + (premium_month_one + ((12-1) * premium_month_one)))
-    annual = comm_premium + annual
+    annual = 10 * (comm_premium + annual)
 
     amended_premium = "{:,.0f}".format(comm_premium)
   
@@ -223,4 +223,4 @@ with tab3:
 with tab4:
     st.write('If the logic of the model is upheld we expect to start paying claims in the 11th year after inception')
     st.write('Claim Payable :')
-    st.write(annual)
+    st.markdown(annual)
