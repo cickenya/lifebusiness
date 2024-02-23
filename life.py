@@ -79,54 +79,54 @@ with tab1:
                 comm_premium = 6*(premium_month_one + (premium_month_one + ((12-1) * premium_month_one)))
             
                 if year == 1:
-                    commission = (comm_premium * commission_rate_year_one)
+                    commission = round(comm_premium * commission_rate_year_one)
                 elif year == 2:
-                    commission = (comm_premium * 0.8 * commission_rate_year_two) + (comm_premium * commission_rate_year_one)
+                    commission = round((comm_premium * 0.8 * commission_rate_year_two) + (comm_premium * commission_rate_year_one))
                 elif year == 3:
-                    commission = (comm_premium * (0.8 ** (year - 1)) * commission_rate_year_three_onwards) + \
+                    commission = round((comm_premium * (0.8 ** (year - 1)) * commission_rate_year_three_onwards) + \
                                 (comm_premium * (0.8 ** (year - 2)) * commission_rate_year_two) + \
-                                (comm_premium * commission_rate_year_one)
+                                (comm_premium * commission_rate_year_one))
                 elif year == 4:
-                    commission = (comm_premium * (0.8 ** (year - 1)) * commission_rate_year_three_onwards) + \
+                    commission = round((comm_premium * (0.8 ** (year - 1)) * commission_rate_year_three_onwards) + \
                                 (comm_premium * (0.8 ** (year - 2)) * commission_rate_year_three_onwards) + \
                                 (comm_premium * (0.8 ** (year - 3)) * commission_rate_year_two) + \
-                                (comm_premium * commission_rate_year_one)
+                                (comm_premium * commission_rate_year_one))
                                 
                 elif year == 5:
-                    commission = (comm_premium * (0.8 ** (year - 1)) * commission_rate_year_three_onwards) + \
+                    commission = round((comm_premium * (0.8 ** (year - 1)) * commission_rate_year_three_onwards) + \
                                 (comm_premium * (0.8 ** (year - 2)) * commission_rate_year_three_onwards) + \
                                 (comm_premium * (0.8 ** (year - 3)) * commission_rate_year_three_onwards) + \
                                 (comm_premium * (0.8 ** (year - 4)) * commission_rate_year_two) + \
-                                (comm_premium * commission_rate_year_one)
+                                (comm_premium * commission_rate_year_one))
                     
                 elif year == 6:
-                    commission = (comm_premium * (0.8 ** (year - 1)) * commission_rate_year_three_onwards) + \
+                    commission = round((comm_premium * (0.8 ** (year - 1)) * commission_rate_year_three_onwards) + \
                                 (comm_premium * (0.8 ** (year - 2)) * commission_rate_year_three_onwards) + \
                                 (comm_premium * (0.8 ** (year - 3)) * commission_rate_year_three_onwards) + \
                                 (comm_premium * (0.8 ** (year - 4)) * commission_rate_year_three_onwards) + \
                                 (comm_premium * (0.8 ** (year - 5)) * commission_rate_year_two) + \
-                                (comm_premium * commission_rate_year_one)
+                                (comm_premium * commission_rate_year_one))
                 elif year == 7:
-                    commission = (comm_premium * (0.8 ** (year - 1)) * commission_rate_year_three_onwards) + \
+                    commission = round((comm_premium * (0.8 ** (year - 1)) * commission_rate_year_three_onwards) + \
                                 (comm_premium * (0.8 ** (year - 2)) * commission_rate_year_three_onwards) + \
                                 (comm_premium * (0.8 ** (year - 3)) * commission_rate_year_three_onwards) + \
                                 (comm_premium * (0.8 ** (year - 4)) * commission_rate_year_three_onwards) + \
                                 (comm_premium * (0.8 ** (year - 5)) * commission_rate_year_three_onwards) + \
                                 (comm_premium * (0.8 ** (year - 6)) * commission_rate_year_two) + \
-                                (comm_premium * commission_rate_year_one)
+                                (comm_premium * commission_rate_year_one))
                     
                 elif year == 8:
-                    commission = (comm_premium * (0.8 ** (year - 1)) * commission_rate_year_three_onwards) + \
+                    commission = round((comm_premium * (0.8 ** (year - 1)) * commission_rate_year_three_onwards) + \
                                 (comm_premium * (0.8 ** (year - 2)) * commission_rate_year_three_onwards) + \
                                 (comm_premium * (0.8 ** (year - 3)) * commission_rate_year_three_onwards) + \
                                 (comm_premium * (0.8 ** (year - 4)) * commission_rate_year_three_onwards) + \
                                 (comm_premium * (0.8 ** (year - 5)) * commission_rate_year_three_onwards) + \
                                 (comm_premium * (0.8 ** (year - 6)) * commission_rate_year_three_onwards) + \
                                 (comm_premium * (0.8 ** (year - 7)) * commission_rate_year_two) + \
-                                (comm_premium * commission_rate_year_one)
+                                (comm_premium * commission_rate_year_one))
                     
                 elif year == 9:
-                    commission = (comm_premium * (0.8 ** (year - 1)) * commission_rate_year_three_onwards) + \
+                    commission = round((comm_premium * (0.8 ** (year - 1)) * commission_rate_year_three_onwards) + \
                                 (comm_premium * (0.8 ** (year - 2)) * commission_rate_year_three_onwards) + \
                                 (comm_premium * (0.8 ** (year - 3)) * commission_rate_year_three_onwards) + \
                                 (comm_premium * (0.8 ** (year - 4)) * commission_rate_year_three_onwards) + \
@@ -134,17 +134,17 @@ with tab1:
                                 (comm_premium * (0.8 ** (year - 6)) * commission_rate_year_three_onwards) + \
                                 (comm_premium * (0.8 ** (year - 7)) * commission_rate_year_three_onwards) + \
                                 (comm_premium * (0.8 ** (year - 8)) * commission_rate_year_two) + \
-                                (comm_premium * commission_rate_year_one)
+                                (comm_premium * commission_rate_year_one))
                     
                 elif year == 10:
-                    commission = (comm_premium * (0.8 ** (year - 1)) * commission_rate_year_three_onwards) + \
+                    commission = round((comm_premium * (0.8 ** (year - 1)) * commission_rate_year_three_onwards) + \
                                 (comm_premium * (0.8 ** (year - 2)) * commission_rate_year_three_onwards) + \
                                 (comm_premium * (0.8 ** (year - 3)) * commission_rate_year_three_onwards) + \
                                 (comm_premium * (0.8 ** (year - 4)) * commission_rate_year_three_onwards) + \
                                 (comm_premium * (0.8 ** (year - 5)) * commission_rate_year_three_onwards) + \
                                 (comm_premium * (0.8 ** (year - 6)) * commission_rate_year_three_onwards) + \
                                 (comm_premium * (0.8 ** (year - 7)) * commission_rate_year_three_onwards) + \
-                                (comm_premium * (0.8 ** (year - 8)) * commission_rate_year_three_onwards) + (comm_premium * (0.8 ** (year - 9)) * commission_rate_year_two) + (comm_premium * commission_rate_year_one)
+                                (comm_premium * (0.8 ** (year - 8)) * commission_rate_year_three_onwards) + (comm_premium * (0.8 ** (year - 9)) * commission_rate_year_two) + (comm_premium * commission_rate_year_one))
                     
 
                 results.append({
@@ -161,15 +161,15 @@ with tab1:
         # st.table(table)
         
         merged = pd.merge(table1, table, on='year', how='inner')
-        merged['Cumulative Premium'] = merged['premium'].cumsum()
-        merged['Cumulative Commission'] = merged['commission'].cumsum()
+        merged['Cumulative Premium'] = round(merged['premium'].cumsum())
+        merged['Cumulative Commission'] = round(merged['commission'].cumsum())
         
 
         finalmerged = merged[['year', 'premium', 'commission', 'Cumulative Premium', 'Cumulative Commission']].rename(columns={'year':'As at End of Year:', 'premium': 'Premium Received', 'commission': 'Commission Payable'})
         
-        finalmerged['Salaries, ICT and Overhead Expenses'] = ((0.1 * finalmerged['Premium Received']) + 2000000)
+        finalmerged['Salaries, ICT and Overhead Expenses'] = round((0.1 * finalmerged['Premium Received']) + 2000000)
 
-        finalmerged['Investment Principal'] = finalmerged['Premium Received'] - (finalmerged['Commission Payable'] + finalmerged['Salaries, ICT and Overhead Expenses'])
+        finalmerged['Investment Principal'] = round(finalmerged['Premium Received'] - (finalmerged['Commission Payable'] + finalmerged['Salaries, ICT and Overhead Expenses']))
 
         finalmerged = finalmerged[['Premium Received', 'Commission Payable','Salaries, ICT and Overhead Expenses', 'Investment Principal','Cumulative Premium', 'Cumulative Commission' ]]
         
