@@ -9,7 +9,7 @@ finaldf = {}
 
 st.header('LIFE BUSINESS FINANCIAL IMPLICATIONS')
 
-tab1, tab2, tab3 = st.tabs(["📈 Calculations",  "Premium and Commission", "Investment"])
+tab1, tab2, tab3, tab4 = st.tabs(["📈 Calculations",  "Premium and Commission", "Investment", "Maturity Claims"])
 
 with tab1:
     
@@ -213,3 +213,7 @@ with tab3:
     
     # Display the styled DataFrame
     st.dataframe(df3)
+
+
+with tab4:
+    st.write('If the logic of the model is upheld we expect to start paying claims in the 11th year after inception')
