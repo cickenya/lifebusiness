@@ -230,7 +230,7 @@ with tab3:
     df3 = df3.round(0)
     
     # Display the styled DataFrame
-    st.dataframe(df3)
+    st.table(df3)
 
 
 with tab4:
