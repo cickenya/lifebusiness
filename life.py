@@ -178,9 +178,13 @@ with tab1:
         
         finalmerged['Salaries, ICT and Overhead Expenses'] = round((0.1 * finalmerged['Premium Received']) + 2000000)
 
+        finalmerged['The_Year'] = 1
+
+        finalmerged['Year'] = finalmerged['The_Year'].cumsum()
+
         finalmerged['Investment Principal'] = round(finalmerged['Premium Received'] - (finalmerged['Commission Payable'] + finalmerged['Salaries, ICT and Overhead Expenses']))
 
-        finalmerged = finalmerged[['Premium Received', 'Commission Payable','Salaries, ICT and Overhead Expenses', 'Investment Principal','Cumulative Premium', 'Cumulative Commission' ]]
+        finalmerged = finalmerged[['Year', 'Premium Received', 'Commission Payable','Salaries, ICT and Overhead Expenses', 'Investment Principal','Cumulative Premium', 'Cumulative Commission' ]]
         
         investment_data = finalmerged.to_dict(orient='records')
         investment = investment_data.copy()
