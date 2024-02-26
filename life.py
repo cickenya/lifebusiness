@@ -21,7 +21,7 @@ with tab1:
     user_amount = int(st.number_input("Enter the Premium Per Policy"))
     user_policy_term = int(st.number_input("Enter the Policy Term (For now 1 to 10 years)"))
     user_persistency = float(st.number_input("Enter Pesistency as a Percentage eg. 80"))
-    investment_rate = float(st.number_input("Enter Investment Rate as a Percentage eg. 10"))
+    investment_rate = float(st.number_input("Enter Rate Of Return On Investment as a Percentage eg. 10"))
 
     policies = user_policies
     years = user_policy_term
