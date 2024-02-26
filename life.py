@@ -9,7 +9,7 @@ rate_of_investment = 0
 
 finaldf = {}
 
-st.header('LIFE BUSINESS FINANCIAL IMPLICATIONS')
+st.header('NEW LIFE BUSINESS FINANCIAL SIMULATION MODEL')
 
 tab1, tab2, tab3, tab4 = st.tabs(["📈 Calculations",  "Premium and Commission", "Investment", "Maturity Claims"])
 
@@ -155,8 +155,8 @@ with tab1:
                                 (comm_premium * (0.8 ** (year - 8)) * commission_rate_year_three_onwards) + (comm_premium * (0.8 ** (year - 9)) * commission_rate_year_two) + (comm_premium * commission_rate_year_one))
                     
 
-                results.append({
-                    'year': year,
+                results.append({                    
+                    'year': f' Year {year}',
                     'commission': commission,})
 
             return results
