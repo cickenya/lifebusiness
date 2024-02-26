@@ -5,6 +5,7 @@ import pandas as pd
 investment = {}
 timeframe = 0
 annual = 0
+rate_of_investment = 0
 
 finaldf = {}
 
@@ -20,6 +21,7 @@ with tab1:
     user_amount = int(st.number_input("Enter the Premium Per Policy"))
     user_policy_term = int(st.number_input("Enter the Policy Term (For now 1 to 10 years)"))
     user_persistency = float(st.number_input("Enter Pesistency as a Percentage eg. 80"))
+    investment_rate = float(st.number_input("Enter Investment Rate as a Percentage eg. 10"))
 
     policies = user_policies
     years = user_policy_term
@@ -27,6 +29,7 @@ with tab1:
     agents = user_agents
     unit_managers = user_units
     persistency = (user_persistency/100)
+    rate_of_investment = ((investment_rate/100) + rate_of_investment)
 
     commission_rate_year_one = 0.4
     commission_rate_year_two = 0.2
@@ -186,7 +189,7 @@ with tab1:
 
             
 
-        df2['Interest Factor'] = (1 + (0.15/1))**(timeframe - df2.index.values)
+        df2['Interest Factor'] = (1 + (rate_of_investment/1))**(timeframe - df2.index.values)
 
         
         df2['Investment Amount After Maturity Period'] = round(df2['Investment Principal'] * df2['Interest Factor'])
