@@ -155,8 +155,9 @@ with tab1:
                                 (comm_premium * (0.8 ** (year - 8)) * commission_rate_year_three_onwards) + (comm_premium * (0.8 ** (year - 9)) * commission_rate_year_two) + (comm_premium * commission_rate_year_one))
                     
 
-                results.append({                    
-                    'year': f' Year {year}',
+                results.append({  
+                   
+                    'year': year,
                     'commission': commission,})
 
             return results
