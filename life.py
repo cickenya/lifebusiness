@@ -199,11 +199,16 @@ with tab1:
             
         df2['Cumulative Amount In Investment Account'] = round(df2['Investment Amount After Maturity Period'].cumsum())
 
-        newdf = df2[['Investment Principal', 'Interest Earned', 'Investment Amount After Maturity Period', 'Cumulative Amount In Investment Account']]
+        df2['The_Year'] = 1
+
+        df2['Year'] = df2['The_Year'].cumsum()
+
+        newdf = df2[['Year', 'Investment Principal', 'Interest Earned', 'Investment Amount After Maturity Period', 'Cumulative Amount In Investment Account']]
         
         newdf = newdf.round(0)
 
         final = newdf.to_dict(orient='records')
+        
         finaldf = final.copy()
 
         
